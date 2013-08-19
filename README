@@ -7,7 +7,11 @@ Hyperparameter.py,
 neural_network.py,
 neural_network_layer.py,
 nn.py:
-These files contain flexible neural network classes for single or multi-layered nets that are trained with backpropagation. These classes feature different initialization methods (sparse or square root scaled); dropout, early stopping and L2 penalty for regularization; and normal and Nesterov's accelerated gradient for better optimization. The neural_network class also includes an option for ensemble generation and features different plotting methods to analyse weights and learning.
+These files contain flexible neural network classes for single or multi-layered nets that are trained with backpropagation. These classes feature:
+	- sparse and square root scaled weight initialization methods
+    - dropout, early stopping and L2 penalty for regularization
+	- momentum and Nesterov's accelerated gradient for better optimization
+	- utilities, such as ensemble generation and different plotting methods to analyse weights and learning
 
 In these classes I tested the effect of decaying dropout on learning performance, exponential weight decay, and output averaging with dropout. I also looked at what happens to the activation units if their activations are restraint, i.e. dropped out, after recent activity (similar to the refractory period of biological neurons). I also benchmarked the Theano implementation against the gnumpy implementation. 
 
