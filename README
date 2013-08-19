@@ -9,7 +9,7 @@ neural_network_layer.py,
 nn.py:
 These files contain flexible neural network classes for single or multi-layered nets that are trained with backpropagation. These classes feature:
 	- sparse and square root scaled weight initialization methods
-    - dropout, early stopping and L2 penalty for regularization
+	- dropout, early stopping and L2 penalty for regularization
 	- momentum and Nesterov's accelerated gradient for better optimization
 	- utilities, such as ensemble generation and different plotting methods to analyse weights and learning
 
