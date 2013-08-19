@@ -1,0 +1,26 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   .gitattributes
+#	new file:   .gitignore
+#	new file:   Hyperparameters.py
+#	new file:   RBM.py
+#	new file:   README.txt
+#	new file:   __init__.py
+#	new file:   batch_creator.py
+#	new file:   combine_ensembles.py
+#	new file:   gnumpy_RBM.py
+#	new file:   gnumpy_nn.py
+#	new file:   neural_network.py
+#	new file:   neural_network_layer.py
+#	new file:   nn.py
+#	new file:   regression.py
+#
+Initial commit
