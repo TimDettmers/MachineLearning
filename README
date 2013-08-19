@@ -1,0 +1,47 @@
+Here I seek to construct classes of machine learning algorithms which enable fast prototyping of variations that algorithms (especially neural networks).
+I evaluate the performance of these new algorithms by looking at both test error and GPU performance. I use Theano (http://deeplearning.net/software/theano/)
+and gnumpy (http://www.cs.toronto.edu/~tijmen/gnumpyDoc.html) for GPU programming. Now follows a short explanation of what the different classes
+are designed to do.
+
+
+Theano
+--------
+
+Hyperparameter.py,
+neural_network.py,
+neural_network_layer.py,
+nn.py:
+These files contain flexible neural network classes for single or multi-layered nets that are trained with backpropagation.
+These classes feature different initialization methods (sparse or square root scaled) and dropout, early stopping and L2 penalty 
+for regularization; normal and Nesterov's accelerated gradient for better optimization. The neural_network class also includes option
+for ensemble generation and features different plotting methods to analyse weights and learning.
+
+In these classes I tested the effect of decaying dropout on learning performance, exponential weight decay, and output averaging
+with dropout. I also looked at what happens to the activation units if their activations are restraint, i.e. dropped out, after
+recent activity (similar to the refractory period of neurons). I also benchmarked the Theano implementation against the gnumpy implementation.
+
+These classes are currently not easily expandable and will soon be refactored or superseded by classes written with gnumpy.
+
+RBM.py:
+Single layered restricted Boltzmann machine which is trained by increasing contrast divergence. The weight is used for pretraining a neural network.
+
+gnumpy
+--------------
+
+gnumpy_nn.py:
+Neural network with single hidden layer. Uses sparse initialization, dropout and L2 penalty as regularization, and Nesterov's accelerated gradient to speed up learning.
+I used this to benchmark GPU speeds of gnumpy versus Theano.
+
+gnumpy_RBM.py:
+Same as RBM.py (see above) but used gnumpy as GPU interface. This is used to gauge how much faster Theano is compared to gnumpy.
+
+regression.py:
+Simple logistic regression. Here I tested learning performance of different momentum methods against each other (no momentum, classical momentum,
+and Nesterov's accelerated gradient)
+
+Utility
+-----------------
+
+batch_creator.py:
+Creates batches that have roughly equal amount of cases per batch to reduce sampling bias.
+
